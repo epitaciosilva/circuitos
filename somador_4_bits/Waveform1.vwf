@@ -1,8 +1,8 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off somador_4_bits -c somador_4_bits --vector_source="/home/epitaciobessa/circuitos/somador_4_bits/Waveform1.vwf" --testbench_file="/home/epitaciobessa/circuitos/somador_4_bits/simulation/qsim/Waveform1.vwf.vht"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off somador_4_bits -c somador_4_bits --vector_source="/home/epitaciobessa/circuitos/somador_4_bits/Waveform1.vwf" --testbench_file="/home/epitaciobessa/circuitos/somador_4_bits/simulation/qsim/Waveform1.vwf.vht"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="/home/epitaciobessa/circuitos/somador_4_bits/simulation/qsim/" somador_4_bits -c somador_4_bits</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="/home/epitaciobessa/circuitos/somador_4_bits/simulation/qsim/" somador_4_bits -c somador_4_bits</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off somador_4_bits -c somador_4_bits --vector_source="/home/epitacio/bti/circuitos/somador_4_bits/Waveform1.vwf" --testbench_file="/home/epitacio/bti/circuitos/somador_4_bits/simulation/qsim/Waveform1.vwf.vht"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off somador_4_bits -c somador_4_bits --vector_source="/home/epitacio/bti/circuitos/somador_4_bits/Waveform1.vwf" --testbench_file="/home/epitacio/bti/circuitos/somador_4_bits/simulation/qsim/Waveform1.vwf.vht"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="/home/epitacio/bti/circuitos/somador_4_bits/simulation/qsim/" somador_4_bits -c somador_4_bits</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="/home/epitacio/bti/circuitos/somador_4_bits/simulation/qsim/" somador_4_bits -c somador_4_bits</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vcom -work work somador_4_bits.vho
@@ -242,10 +242,11 @@ TRANSITION_LIST("a[3]")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 50;
-			LEVEL 0 FOR 10.0;
-			LEVEL 1 FOR 10.0;
+			REPEAT = 6;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 80.0;
 		}
+		LEVEL 0 FOR 40.0;
 	}
 }
 
@@ -256,12 +257,11 @@ TRANSITION_LIST("a[2]")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 66;
-			LEVEL 0 FOR 7.5;
-			LEVEL 1 FOR 7.5;
+			REPEAT = 12;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
 		}
-		LEVEL 0 FOR 7.5;
-		LEVEL 1 FOR 2.5;
+		LEVEL 0 FOR 40.0;
 	}
 }
 
@@ -272,9 +272,9 @@ TRANSITION_LIST("a[1]")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 100;
-			LEVEL 0 FOR 5.0;
-			LEVEL 1 FOR 5.0;
+			REPEAT = 25;
+			LEVEL 0 FOR 20.0;
+			LEVEL 1 FOR 20.0;
 		}
 	}
 }
@@ -286,9 +286,9 @@ TRANSITION_LIST("a[0]")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 200;
-			LEVEL 0 FOR 2.5;
-			LEVEL 1 FOR 2.5;
+			REPEAT = 50;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
 		}
 	}
 }
@@ -298,15 +298,15 @@ TRANSITION_LIST("b[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 2.0;
+		LEVEL 0 FOR 70.0;
 		NODE
 		{
-			REPEAT = 199;
-			LEVEL 0 FOR 2.5;
-			LEVEL 1 FOR 2.5;
+			REPEAT = 5;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
 		}
-		LEVEL 0 FOR 2.5;
-		LEVEL 1 FOR 0.5;
+		LEVEL 1 FOR 80.0;
+		LEVEL 0 FOR 50.0;
 	}
 }
 
@@ -315,15 +315,14 @@ TRANSITION_LIST("b[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 2.0;
+		LEVEL 0 FOR 30.0;
 		NODE
 		{
-			REPEAT = 99;
-			LEVEL 0 FOR 5.0;
-			LEVEL 1 FOR 5.0;
+			REPEAT = 12;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
 		}
-		LEVEL 0 FOR 5.0;
-		LEVEL 1 FOR 3.0;
+		LEVEL 1 FOR 10.0;
 	}
 }
 
@@ -332,15 +331,15 @@ TRANSITION_LIST("b[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 2.0;
+		LEVEL 0 FOR 10.0;
 		NODE
 		{
-			REPEAT = 66;
-			LEVEL 0 FOR 7.5;
-			LEVEL 1 FOR 7.5;
+			REPEAT = 24;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 20.0;
 		}
-		LEVEL 0 FOR 7.5;
-		LEVEL 1 FOR 0.5;
+		LEVEL 1 FOR 20.0;
+		LEVEL 0 FOR 10.0;
 	}
 }
 
@@ -349,15 +348,12 @@ TRANSITION_LIST("b[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 2.0;
 		NODE
 		{
-			REPEAT = 49;
-			LEVEL 0 FOR 10.0;
+			REPEAT = 50;
 			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
 		}
-		LEVEL 0 FOR 10.0;
-		LEVEL 1 FOR 8.0;
 	}
 }
 
@@ -459,7 +455,7 @@ DISPLAY_LINE
 DISPLAY_LINE
 {
 	CHANNEL = "b";
-	EXPAND_STATUS = EXPANDED;
+	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 5;
 	TREE_LEVEL = 0;
