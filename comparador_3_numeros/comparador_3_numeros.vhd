@@ -12,9 +12,9 @@ architecture comparar of comparador_3_numeros is
 	begin 
 		process(num1,num2,num3) 
 			begin 
-				if(num1 > num2 and num1 > num3) then 
+				if(num1 >= num2 and num1 >= num3) then 
 					maior <= num1;
-				elsif(num2 > num1 and num2 > num3) then
+				elsif(num2 >= num1 and num2 >= num3) then
 					maior <= num2;
 				else
 					maior <= num3;
